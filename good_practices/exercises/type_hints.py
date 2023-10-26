@@ -11,8 +11,10 @@ def add(a, b):
 
 
 # TODO: Write same function with integer type hints for arguments and return value
-def add2(a, b):
-    pass
+def add2(a:int, b:int) -> int:
+    return a + b
+
+print(add2(3,0.3))
 
 
 def assert_has_valid_type_hints(func: Callable) -> None:

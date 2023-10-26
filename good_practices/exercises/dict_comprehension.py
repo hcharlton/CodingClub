@@ -14,7 +14,7 @@ for key, value in data.items():
         result[key] = value
 
 # TODO: Do the same using a dictionary comprehension
-result2 = None
+result2 = {(key if value ==1 else "_" + key): value if value ==1 else value**2 for key, value in data.items()}
 
 # Check that the results are the same
 assert result == result2, f"Expected {result}, but got {result2}"

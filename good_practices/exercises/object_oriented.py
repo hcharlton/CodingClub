@@ -52,7 +52,10 @@ class Variant:
 
         :return: True if it's a transition, False otherwise.
         """
-        pass
+        if self.major in self.transitions and self.minor in self.transitions:
+            return True
+        else:
+            return False
 
     def is_transversion(self) -> bool:
         """
@@ -61,7 +64,10 @@ class Variant:
 
         :return: True if it's a transversion, False otherwise.
         """
-        pass
+        if not(self.major in self.transitions and self.minor in self.transitions):
+            return True
+        else:
+            return False
 
     def is_single_base(self, base: str) -> bool:
         """
@@ -78,7 +84,10 @@ class Variant:
 
         :return: True if it's an SNP, False otherwise.
         """
-        pass
+        if self.major in self.bases and self.minor in self.bases:
+            return True
+        else:
+            return False
 
     def is_biallelic(self) -> bool:
         """
@@ -86,13 +95,11 @@ class Variant:
 
         :return: True if it's biallelic, False otherwise.
         """
-        pass
+        if self.major != self.minor and self.major != 'N' and self.minor != 'N':
+            return True
+        else:
+            return False
 
-    def print_info(self) -> str:
-        """
-        Print information about the variant.
-        """
-        pass
 
 
 print_variant_info(['A', 'G'])
@@ -132,3 +139,5 @@ assert not variant4.is_transition()
 assert not variant4.is_transversion()
 assert not variant4.is_snp()
 assert variant4.is_biallelic()
+
+print("success")

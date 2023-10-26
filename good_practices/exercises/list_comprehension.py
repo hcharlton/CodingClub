@@ -16,7 +16,7 @@ for num in numbers:
         result.append(num)
 
 # TODO: Do the same using a list comprehension
-result2 = None
+result2 = [i**2 if i%2 == 0 else i for i in numbers]
 
 # Check that the results are the same
 np.testing.assert_array_equal(result, result2)

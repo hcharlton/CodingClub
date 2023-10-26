@@ -23,7 +23,11 @@ def read_file_without_exceptions2(filename: str) -> str:
     :return: The contents of the file as a string
     :raises RuntimeError: If the file does not exist.
     """
-    pass
+    if not os.path.exists(filename):
+        raise RuntimeError()
+    with open(filename, 'r') as file:
+        return file.read()
+
 
 
 # Check that the functions work as expected by reading this file
